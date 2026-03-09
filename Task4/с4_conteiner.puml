@@ -1,2 +1,58 @@
 @startuml
+!include <C4/C4_Container>
+
+Person(client, "Client")
+Person(back_deposit, "Back office manager")
+Person(cc_operator, "Call center operator")
+Person(partner_operator, "Partner call center operator")
+
+System_Boundary(c1, "Bank Standart") {
+    System_Boundary(c2, "Internet Bank (monolith)") {
+        Container(ib_web, "Internet Bank (web app)", "ASP.NET MVC", "Provides customer interface")
+        ContainerDb(ib_db, "Internet Bank DB", "MS SQL", "Stores customer data, payments")
+    }
+    System_Boundary(c3, "Deposit Service") {
+        Container(deposit_service, "Deposit Service", "Java Spring Boot", "Processes applications, manages rates, sends SMS, exports files")
+        ContainerDb(deposit_db, "Deposit Service DB", "PostgreSQL", "Rate cache, applications, statuses")
+    }
+    System_Boundary(c4, "ABS (Core Banking)") {
+        Container(abs_adapter, "ABS Adapter", "Java / Kotlin", "Reads rates from ABS replica, writes applications to ABS, exchanges events via Kafka")
+        ContainerDb(abs_db, "ABS (primary DB)", "Oracle", "Core accounting, rates, customers")
+        ContainerDb(abs_replica, "ABS replica (read-only)", "Oracle", "Read rates without loading primary DB")
+    }
+    System_Boundary(c5, "Call Center System") {
+        Container(cc_api, "Call Center API", "Java Spring Boot", "CRM backend")
+        ContainerDb(cc_db, "Call Center DB", "PostgreSQL", "Appeals and customer data")
+    }
+
+    Container(site_web, "Website", "PHP, React.js", "Marketing website")
+    Container(kafka, "Apache Kafka", "Message broker", "Async event bus")
+    Container(cc_web, "Call Center UI", "React.js", "Operator interface")
+    Container(sms_gate, "SMS gateway", "REST service", "Sends SMS via external operator")
+}
+
+System_Ext(partner_sftp, "Partner SFTP server", "Receives rate files")
+System_Ext(partner_cc_system, "Partner call center system", "External CRM")
+
+' Связи
+Rel(client, ib_web, "Uses", "HTTPS")
+Rel(client, site_web, "Visits", "HTTPS")
+Rel(ib_web, deposit_service, "Gets rates, sends applications", "REST/HTTPS")
+Rel(site_web, deposit_service, "Gets rates, sends applications", "REST/HTTPS")
+Rel(deposit_service, deposit_db, "Reads/writes", "JDBC")
+Rel(deposit_service, sms_gate, "Sends SMS", "REST/HTTPS")
+Rel(deposit_service, partner_sftp, "Uploads rate file", "SFTP (periodically)")
+Rel(deposit_service, kafka, "Publishes events (new applications, rate changes)", "Kafka API")
+Rel(kafka, abs_adapter, "Delivers events (applications)", "Kafka API")
+Rel(abs_adapter, kafka, "Publishes events (rate updates)", "Kafka API")  ' optional
+Rel(abs_adapter, abs_replica, "Reads rates (periodic polling)", "SQL/JDBC")
+Rel(abs_adapter, abs_db, "Writes applications (batch or by event)", "SQL/JDBC")
+Rel(back_deposit, abs_db, "Edits rates via ABS client", "Delphi (not shown)")
+Rel(cc_web, cc_api, "Uses", "REST")
+Rel(cc_api, cc_db, "Reads/writes", "JDBC")
+Rel(cc_api, deposit_service, "Gets rates for operators", "REST/HTTPS (with API key)")
+Rel(cc_operator, cc_web, "Works in CRM", "Web")
+Rel(partner_operator, partner_cc_system, "Works", "Web/scripts")
+Rel(partner_cc_system, partner_sftp, "Retrieves rate file", "SFTP")
+Rel(ib_web, ib_db, "Reads/writes", "JDBC/SQL")
 @enduml
