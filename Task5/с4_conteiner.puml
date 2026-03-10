@@ -1,0 +1,49 @@
+@startuml
+!include <C4/C4_Container>
+
+Person(client, "Client")
+Person(back_office, "Back office (loans)")
+
+System_Boundary(c1, "Bank Standart") {
+    System_Boundary(c2, "Loan Service") {
+        Container(loan_processor, "Loan Processor", "Java Spring Boot", "Business logic, orchestration")
+        ContainerDb(loan_db, "Loan DB", "PostgreSQL", "Stores applications, pre-approved offers, cache")
+    }
+    System_Boundary(c3, "ABS  (Core Banking)") {
+        Container(abs_adapter, "ABS Adapter", "Java", "Async bridge to ABS (Kafka consumer)")
+        ContainerDb(abs_db, "ABS DB", "Oracle", "Core banking data")
+        ContainerDb(abs_replica, "ABS replica (read-only)", "Oracle", "Read rates without loading primary DB")
+    }
+Container(loan_gateway, "Loan Gateway", "Java Spring Boot", "Handles HTTP requests from frontends")
+Container(conveyor_api, "Credit Conveyor API", "Camunda REST", "Handles application processes")
+Container(scoring_api, "Scoring API", "Python Flask", "ML scoring service")
+Container(sms_gate, "SMS Gateway", "REST service", "Sends SMS")
+Container(kafka_producer, "Kafka Producer", "Java", "Publishes events (new app, status change)")
+Container(kafka, "Apache Kafka", "Message broker", "Async event bus")
+Container(ib_web, "Internet Bank Web", "ASP.NET MVC", "Customer interface")
+Container(site_web, "Website", "PHP/React", "Marketing site")
+Container(cc_api, "Call Center API", "Java Spring", "CRM backend")
+}
+
+System_Ext(bki, "Credit Bureau", "REST API")
+
+' Связи
+Rel(client, ib_web, "Uses", "HTTPS")
+Rel(client, site_web, "Visits", "HTTPS")
+Rel(back_office, conveyor_api, "Processes", "Web UI")
+Rel(ib_web, loan_gateway, "Gets offers, submits apps", "REST/HTTPS")
+Rel(site_web, loan_gateway, "Gets offers, submits apps", "REST/HTTPS")
+Rel(cc_api, loan_gateway, "Gets status (optional)", "REST/HTTPS")
+Rel(loan_gateway, loan_processor, "Calls", "in-process")
+Rel(loan_processor, loan_db, "Reads/writes", "JDBC")
+Rel(loan_processor, kafka_producer, "Publishes events", "Spring Kafka")
+Rel(loan_processor, conveyor_api, "Sends applications, gets status", "REST/HTTPS")
+Rel(loan_processor, scoring_api, "Requests scoring", "REST/HTTPS")
+Rel(loan_processor, sms_gate, "Sends SMS", "REST/HTTPS")
+Rel(kafka_producer, kafka, "Publishes", "Kafka protocol")
+Rel(kafka, abs_adapter, "Delivers events (new apps, status)", "Kafka protocol")
+Rel(abs_adapter, abs_db, "Writes applications (batch)", "SQL/JDBC")
+Rel(abs_adapter, abs_replica, "Reads rates (periodic polling)", "SQL/JDBC")
+Rel(scoring_api, bki, "Requests history", "REST/HTTPS")
+
+@enduml

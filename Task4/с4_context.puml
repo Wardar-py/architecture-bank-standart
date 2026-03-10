@@ -7,14 +7,14 @@ Person(back_deposit, "Back office manager (deposits)", "Manages rates, processes
 Person(back_credit, "Back office manager (loans)", "Participates in rate approval")
 Person(cc_operator, "In-house call center operator", "Advises clients on rates")
 Person(partner_operator, "Partner call center operator", "External operator, advises on rates")
-
+Boundary(bank, "Bank 'Standard'") {
 System(deposit_system, "Deposit Service", "Manages online applications, rates, integrations")
 System(abs, "ABS (Core Banking)", "Core operations accounting, rate storage, application processing")
 System(internet_bank, "Internet Bank", "Monolithic web application for customers")
 System(site, "Website", "Marketing website")
 System(cc_system, "Call Center System", "CRM for operators (microservice-based)")
 System(sms_gateway, "SMS gateway", "Sends SMS via telecom operator")
-
+}
 System_Ext(partner_cc, "Partner Call Center", "External CRM, file exchange via SFTP")
 
 ' Связи

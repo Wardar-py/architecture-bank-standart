@@ -1,0 +1,37 @@
+@startuml
+!include <C4/C4_Context>
+
+Person(client, "Client", "Bank customer (new or existing)")
+Person(front_office, "Front office employee", "Branch employee")
+Person(back_office, "Back office (loans)", "Credit department employee")
+Person(cc_operator, "Call center operator", "Handles inquiries")
+
+Boundary(bank, "Bank 'Standard'") {
+    System(internet_bank, "Internet Bank", "ASP.NET MVC monolith")
+    System(site, "Website", "PHP/React.js")
+    System(cc_system, "Call Center System", "Java/React microservices")
+    System(loan_service, "Loan Service", "Manages online loan applications, integrates with credit conveyor and scoring")
+    System(conveyor, "Credit Conveyor", "Camunda BPM, processes loan applications")
+    System(scoring, "Scoring System", "Python/Flask, ML model, provides credit rating")
+    System(abs, "ABS (Core Banking)", "Oracle DB, Delphi client, core accounting")
+    System(sms_gateway, "SMS Gateway", "REST service to telecom provider")
+}
+
+System_Ext(bki, "Credit Bureau", "REST API for credit history")
+
+' Связи
+Rel(client, internet_bank, "Uses", "HTTPS")
+Rel(client, site, "Visits", "HTTPS")
+Rel(client, cc_system, "Calls", "Phone")
+Rel(front_office, abs, "Works in ABS", "Delphi")
+Rel(back_office, conveyor, "Processes applications", "Web UI")
+Rel(cc_operator, cc_system, "Uses CRM", "Web")
+Rel(internet_bank, loan_service, "Gets offers, sends applications", "REST/HTTPS")
+Rel(site, loan_service, "Gets offers, sends applications", "REST/HTTPS")
+Rel(loan_service, conveyor, "Creates/updates applications", "REST/HTTPS")
+Rel(loan_service, scoring, "Requests scoring", "REST/HTTPS")
+Rel(loan_service, sms_gateway, "Sends SMS", "REST/HTTPS")
+Rel(loan_service, bki, "Requests credit history (via scoring?)", "REST/HTTPS")
+Rel(loan_service, abs, "Async data exchange (via adapter)", "Kafka/adapter")
+Rel(cc_system, loan_service, "Gets application status (optional)", "REST/HTTPS")
+@enduml

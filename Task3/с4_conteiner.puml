@@ -28,6 +28,7 @@ System_Boundary(c1, "Bank Standart") {
     Container(cc_web, "Call Center UI", "React.js", "Operator interface")
     Container(sms_gate, "SMS gateway", "REST service", "Sends SMS via external operator")
 }
+
 ' Связи
 Rel(client, ib_web, "Uses", "HTTPS")
 Rel(client, site_web, "Visits", "HTTPS")
