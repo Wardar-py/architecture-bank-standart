@@ -1,0 +1,37 @@
+@startuml
+!include <C4/C4_Context>
+
+Person(client, "Client", "Individual, bank customer")
+Person(front_office, "Front office employee", "Branch employee")
+Person(back_deposit, "Back office manager (deposits)", "Manages rates, processes applications")
+Person(back_credit, "Back office manager (loans)", "Participates in rate approval")
+Person(cc_operator, "In-house call center operator", "Advises clients on rates")
+Person(partner_operator, "Partner call center operator", "External operator, advises on rates")
+Boundary(bank, "Bank 'Standard'") {
+System(deposit_system, "Deposit Service", "Manages online applications, rates, integrations")
+System(abs, "ABS (Core Banking)", "Core operations accounting, rate storage, application processing")
+System(internet_bank, "Internet Bank", "Monolithic web application for customers")
+System(site, "Website", "Marketing website")
+System(cc_system, "Call Center System", "CRM for operators (microservice-based)")
+System(sms_gateway, "SMS gateway", "Sends SMS via telecom operator")
+}
+System_Ext(partner_cc, "Partner Call Center", "External CRM, file exchange via SFTP")
+
+' Связи
+Rel(client, internet_bank, "Uses", "HTTPS")
+Rel(client, site, "Visits", "HTTPS")
+Rel(client, cc_system, "Calls", "Phone")
+Rel(client, partner_cc, "Calls (may reach)", "Phone")
+Rel(front_office, abs, "Works in ABS", "Delphi client")
+Rel(back_deposit, abs, "Edits rates, processes applications", "Delphi/Excel")
+Rel(back_credit, abs, "Approves rates (via email)", "Email/Excel")
+Rel(cc_operator, cc_system, "Works in CRM", "Web interface")
+Rel(partner_operator, partner_cc, "Works in external system", "Web/scripts")
+Rel(internet_bank, deposit_system, "Gets rates, sends applications", "REST/HTTPS")
+Rel(site, deposit_system, "Gets rates, sends applications", "REST/HTTPS")
+Rel(cc_system, deposit_system, "Gets rates for consultations", "REST/HTTPS")
+Rel(deposit_system, sms_gateway, "Sends SMS", "REST/HTTPS")
+Rel(deposit_system, partner_cc, "Uploads rate file", "SFTP (periodically)")
+Rel(deposit_system, abs, "Asynchronous data exchange", "via adapter / Kafka")
+
+@enduml

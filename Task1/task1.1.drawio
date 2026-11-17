@@ -1,0 +1,157 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram name="Страница-1" id="j0msn3oIlEPcByjgT9zk">
+    <mxGraphModel dx="2066" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="40" width="180" x="160" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;align=left;" value="Продажи в сети отделений" vertex="1">
+          <mxGeometry height="40" width="180" x="340" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Продажи через кол-центр" vertex="1">
+          <mxGeometry height="40" width="180" x="520" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Digital-оповещения клиентов" vertex="1">
+          <mxGeometry height="40" width="180" x="700" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Обслуживание депозитных процессов" vertex="1">
+          <mxGeometry height="40" width="180" x="880" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Управление обслуживания в сети отделений (Фронт-офис)" vertex="1">
+          <mxGeometry height="60" width="180" x="160" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="АБС (Delphi-клиент) – ввод данных, открытие продуктов" vertex="1">
+          <mxGeometry height="60" width="180" x="340" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="60" width="180" x="520" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="60" width="180" x="700" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="АБС – создание депозита, печать документов" vertex="1">
+          <mxGeometry height="60" width="180" x="880" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Управление обслуживанием депозитных продуктов (Бэк-офис)" vertex="1">
+          <mxGeometry height="80" width="180" x="160" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="80" width="180" x="340" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="80" width="180" x="520" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="80" width="180" x="700" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="АБС, Excel (ручной расчёт ставок), почта" vertex="1">
+          <mxGeometry height="80" width="180" x="880" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="IT-Управление (Внутренняя команда + АБС)" vertex="1">
+          <mxGeometry height="100" width="180" x="160" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Поддержка АБС" vertex="1">
+          <mxGeometry height="100" width="180" x="340" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Поддержка системы кол-центра (Java-доработки)" vertex="1">
+          <mxGeometry height="100" width="180" x="520" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Поддержка СМС-шлюза" vertex="1">
+          <mxGeometry height="100" width="180" x="700" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Разработка/поддержка АБС" vertex="1">
+          <mxGeometry height="100" width="180" x="880" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Управление обслуживанием кредитных продуктов (Бэк-офис)" vertex="1">
+          <mxGeometry height="70" width="180" x="160" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-55" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="340" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="520" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="700" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="880" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-59" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Собственный Кол-центр" vertex="1">
+          <mxGeometry height="70" width="180" x="160" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-60" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="340" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-61" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Система кол-центра (Java/React) – приём звонков, заведение обращений" vertex="1">
+          <mxGeometry height="70" width="180" x="520" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="700" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Передача обращений в АБС" vertex="1">
+          <mxGeometry height="70" width="180" x="880" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-69" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Команда цифровой трансформации" vertex="1">
+          <mxGeometry height="70" width="180" x="160" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-70" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Анализ текущих процессов, постановка задач по развитию цифровых каналов." vertex="1">
+          <mxGeometry height="70" width="180" x="340" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="520" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="700" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Анализ процессов, требования к автоматизации" vertex="1">
+          <mxGeometry height="70" width="180" x="880" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-89" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Обслуживание кредитных процессов" vertex="1">
+          <mxGeometry height="40" width="180" x="1060" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-90" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="АБС – ввод кредитной заявки" vertex="1">
+          <mxGeometry height="60" width="180" x="1060" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-91" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="80" width="180" x="1060" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-93" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Разработка скоринга, поддержка конвейера" vertex="1">
+          <mxGeometry height="100" width="180" x="1060" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-94" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Кредитный конвейер, Система скоринга, АБС (данные)" vertex="1">
+          <mxGeometry height="70" width="180" x="1060" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-95" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Консультирование (через систему кол-центра)" vertex="1">
+          <mxGeometry height="70" width="180" x="1060" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="dWRHT4FMLZV2Rixb6oVM-97" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Анализ процессов, требования" vertex="1">
+          <mxGeometry height="70" width="180" x="1060" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="4uZO0UyxK8kOUwedzBUP-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Управление договорами" vertex="1">
+          <mxGeometry height="40" width="180" x="1240" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="4uZO0UyxK8kOUwedzBUP-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="АБС – загрузка сканов договоров" vertex="1">
+          <mxGeometry height="60" width="180" x="1240" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="4uZO0UyxK8kOUwedzBUP-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="80" width="180" x="1240" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="4uZO0UyxK8kOUwedzBUP-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="Поддержка АБС" vertex="1">
+          <mxGeometry height="100" width="180" x="1240" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="4uZO0UyxK8kOUwedzBUP-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="1240" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="4uZO0UyxK8kOUwedzBUP-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="1240" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="4uZO0UyxK8kOUwedzBUP-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;imageWidth=180;imageHeight=40;" value="" vertex="1">
+          <mxGeometry height="70" width="180" x="1240" y="620" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

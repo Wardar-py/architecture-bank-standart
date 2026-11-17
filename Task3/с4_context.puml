@@ -1,0 +1,30 @@
+@startuml
+!include <C4/C4_Context>
+
+Person(client, "Client", "Individual, bank customer")
+Person(back_deposit, "Back office manager (deposits)", "Manages rates, processes applications")
+Person(back_credit, "Back office manager (loans)", "Participates in rate approval")
+Boundary(bank, "Bank 'Standard'") {
+    System(deposit_system, "Deposit Service", "Manages online applications, rates, integrations")
+    System(deposit_system, "Deposit Service", "Manages online applications, rates, integrations")
+    System(abs, "ABS (Core Banking)", "Core operations accounting, rate storage, application processing")
+    System(internet_bank, "Internet Bank", "Monolithic web application for customers")
+    System(site, "Website", "Marketing website")
+    System(cc_system, "Call Center System", "CRM for operators (microservice-based)")
+    System(sms_gateway, "SMS gateway", "Sends SMS via telecom operator")
+}
+
+' Связи
+Rel(client, internet_bank, "Uses", "HTTPS")
+Rel(client, site, "Visits", "HTTPS")
+Rel(client, cc_system, "Calls", "Phone")
+Rel(back_deposit, abs, "Edits rates, processes applications", "Delphi/Excel")
+Rel(back_credit, abs, "Approves rates (via email)", "Email/Excel")
+
+Rel(internet_bank, deposit_system, "Gets rates, sends applications", "REST/HTTPS")
+Rel(site, deposit_system, "Gets rates, sends applications", "REST/HTTPS")
+Rel(cc_system, deposit_system, "Gets rates for consultations", "REST/HTTPS")
+Rel(deposit_system, sms_gateway, "Sends SMS", "REST/HTTPS")
+Rel(deposit_system, abs, "Asynchronous data exchange", "via adapter / Kafka")
+
+@enduml
